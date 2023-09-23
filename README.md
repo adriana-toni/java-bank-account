@@ -3,6 +3,7 @@ Java API RESTful criada com SpringBoot
 
 ## Diagrama de classe
 Desenvolvido utilizando IA Generativa com ChatGPT utilizando a sintaxe *Mermaid*
+
 ```mermaid
 classDiagram
     class User {
@@ -35,8 +36,13 @@ classDiagram
         - description: string
     }
 
-    User -- Account: has
-    User -- Feature: has
-    User -- Card: has
-    User -- News: has
+    User "1" *-- "1" Account
+    User "1" *-- "n" Feature
+    User "1" *-- "1" Card
+    User "1" *-- "n" News
 ```
+
+
+### Reference Documentation
+
+* [Mermaid Diagramming and charting tool](https://mermaid.js.org/)
