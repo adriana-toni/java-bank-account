@@ -7,5 +7,7 @@ import pinetree.javabankaccount.domain.model.User;
 import java.util.UUID;
 
 @Repository
-public interface UserRepositoy extends JpaRepository<User, UUID> {
+public interface UserRepository extends JpaRepository<User, UUID> {
+
+    boolean existsByAccountNumber(String accountNumber);
 }
