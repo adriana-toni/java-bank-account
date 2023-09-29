@@ -1,9 +1,9 @@
-package service.impl;
+package pinetree.javabankaccount.service.impl;
 
 import org.springframework.stereotype.Service;
 import pinetree.javabankaccount.domain.model.User;
 import pinetree.javabankaccount.domain.repository.UserRepository;
-import service.UserService;
+import pinetree.javabankaccount.service.UserService;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package service;
+package pinetree.javabankaccount.service;
 
 import pinetree.javabankaccount.domain.model.User;
 
