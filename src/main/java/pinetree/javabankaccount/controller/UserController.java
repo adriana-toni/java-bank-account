@@ -23,7 +23,6 @@ public class UserController {
         this.userService = userService;
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> findById(@PathVariable UUID id) {
         var user = userService.findById(id);
