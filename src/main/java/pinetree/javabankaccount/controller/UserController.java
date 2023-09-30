@@ -9,6 +9,7 @@ import pinetree.javabankaccount.dtos.UserDto;
 import pinetree.javabankaccount.service.UserService;
 
 import java.net.URI;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -33,6 +34,11 @@ public class UserController {
         return ResponseEntity.ok(userDto);
     }
 
+    @GetMapping
+    public ResponseEntity<List<User>> findAll() {
+        var listOfUsers = userService.findAll();
+        return ResponseEntity.ok(listOfUsers);
+    }
     @PostMapping
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto UserToCreateDto) {
 

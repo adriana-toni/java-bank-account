@@ -1,10 +1,12 @@
 package pinetree.javabankaccount.service.impl;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pinetree.javabankaccount.domain.model.User;
 import pinetree.javabankaccount.domain.repository.UserRepository;
 import pinetree.javabankaccount.service.UserService;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -35,5 +37,9 @@ public class UserServiceImpl implements UserService {
         }
 
         return userRepository.save(userToCreate);
+    }
+
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 }
