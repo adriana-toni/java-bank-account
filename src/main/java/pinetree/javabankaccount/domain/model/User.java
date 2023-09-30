@@ -23,7 +23,7 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Account account;
 
     @OneToOne(cascade = CascadeType.ALL)
