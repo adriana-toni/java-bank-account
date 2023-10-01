@@ -7,7 +7,6 @@ utilizando as seguintes dependências:
 * Spring Web
 * Spring Data JPA
 * Lombok
-* OpenFeign
 * H2 Database
 
 e a documentação da API desenvolvida utilizando OpenAPI 3.
