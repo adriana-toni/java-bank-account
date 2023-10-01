@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -58,4 +58,21 @@ public class UserController {
         return ResponseEntity.created(location).body(userCreatedDto);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> update(@PathVariable UUID id, @RequestBody UserDto userDto) {
+        User user = new User();
+        BeanUtils.copyProperties(userDto, user);
+
+        var userUpdated = userService.update(id, user);
+
+        UserDto userDtoUpdated = new UserDto();
+        BeanUtils.copyProperties(userUpdated, userDtoUpdated);
+        return ResponseEntity.ok(userDtoUpdated);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable UUID id) {
+        userService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
